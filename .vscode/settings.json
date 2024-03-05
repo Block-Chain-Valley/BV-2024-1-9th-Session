@@ -7,11 +7,13 @@
     "cache": true,
     "coverage": true,
     "typechain-types": true,
-    ".husky": false,
-    ".lintstagedrc": false,
-    ".prettierignore": false,
-    ".prettierrc": false,
-    "commitlint.config.js": false
+    ".husky": true,
+    ".lintstagedrc": true,
+    ".prettierignore": true,
+    ".prettierrc": true,
+    "commitlint.config.js": true,
+    ".nvmrc": true,
+    "coverage.json": true
   },
   "search.exclude": {
     "node_modules/": true,
