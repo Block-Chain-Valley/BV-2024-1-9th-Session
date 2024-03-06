@@ -38,10 +38,12 @@ describe("명함 컨트랙트 테스트", () => {
 
   it("명함이 정상적으로 생성되는가?", async () => {
     const nameCardInput = mockNameCardInput();
-
-    expect(await nameCard.connect(users[0]).upsertNameCard(users[0].address, nameCardInput))
-      .to.emit(nameCard, "UpsertNameCard")
-      .withArgs(users[0].address, nameCardInput);
+    /*
+      트랜잭션의 성공, 실패 또는 이벤트 결과 등 트랜잭션의 실행 결과와 관련된 값은 expect 밖에서 비동기 처리를 해 준다.
+    */
+    await expect(nameCard.connect(users[0]).upsertNameCard(users[0].address, nameCardInput))
+      .to.emit(nameCard, "NameCardUpserted")
+      .withArgs(users[0].address, Object.values(nameCardInput));
   });
 
   it("생성된 명함 조회가 가능한가?", async () => {
