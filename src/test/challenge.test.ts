@@ -6,7 +6,7 @@ import { ethers, network } from "hardhat";
 import { faker } from "@faker-js/faker";
 import { HardhatUtil } from "./lib/hardhat-util";
 
-describe("명함 컨트랙트 테스트", () => {
+describe("Challenge 컨트랙트 테스트", () => {
   /* Signer */
   let admin: SignerWithAddress;
   let users: SignerWithAddress[];
