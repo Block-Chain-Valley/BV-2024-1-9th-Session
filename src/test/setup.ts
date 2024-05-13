@@ -1,4 +1,4 @@
-import { NameCard } from "@typechains";
+import { Challenge } from "@typechains";
 import { deployments, ethers } from "hardhat";
 
 export const setup = async () => {
@@ -6,9 +6,9 @@ export const setup = async () => {
   const [admin, ...users] = await ethers.getSigners();
 
   /* 컨트랙트 데이터 설정: deployments.fixture를 통하여 hardhat 환경에 배포된 컨트랙트 정보를 가져온다. */
-  await deployments.fixture(["NameCard"]);
+  await deployments.fixture(["Challenge"]);
   const contracts = {
-    nameCard: await ethers.getContract<NameCard>("NameCard"),
+    challenge: await ethers.getContract<Challenge>("Challenge"),
   };
 
   return {

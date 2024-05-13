@@ -14,10 +14,13 @@ const func: DeployFunction = async (hre: HardhatRuntimeEnvironment) => {
   const { deploy } = deployments;
   const [developer] = await ethers.getSigners();
 
-  await deploy("NameCard", {
+  // entryFee: 1 ETH로 설정
+  const entryFee = ethers.utils.parseEther("1");
+
+  await deploy("Challenge", {
     from: developer.address,
-    contract: "NameCard",
-    args: [],
+    contract: "Challenge",
+    args: [entryFee],
     log: true,
     autoMine: true,
   });
