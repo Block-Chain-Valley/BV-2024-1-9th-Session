@@ -9,17 +9,14 @@ if [[ $local_branch_name =~ ^(master)$ ]]; then
 elif [[ $local_branch_name =~ ^(release\/([0-9.]+))$ ]]; then
     echo "\033[32m✔\033[m Branch(Release): $local_branch_name"
     exit 0
-elif [[ $local_branch_name =~ ^(feature\/([a-zA-Z0-9.]+-[0-9]+)-(.+))$ ]]; then
+elif [[ $local_branch_name =~ ^(feature\/(.+))$ ]]; then
     echo "\033[32m✔\033[m Branch(Feature): $local_branch_name"
     exit 0
-elif [[ $local_branch_name =~ ^(hotfix\/([a-zA-Z0-9.]+-[0-9]+)-(.+))$ ]]; then
-    echo "\033[32m✔\033[m Branch(Hotfix): $local_branch_name"
+elif [[ $local_branch_name =~ ^(fix\/(.+))$ ]]; then
+    echo "\033[32m✔\033[m Branch(Fix): $local_branch_name"
     exit 0
-elif [[ $local_branch_name =~ ^(wip\/(.+))$ ]]; then
-    echo "\033[32m✔\033[m Branch(Wip): $local_branch_name"
-    exit 0
-elif [[ $local_branch_name =~ ^(dev\/(.+))$ ]]; then
-    echo "\033[32m✔\033[m Branch(Dev): $local_branch_name"
+elif [[ $local_branch_name =~ ^(chore\/(.+))$ ]]; then
+    echo "\033[32m✔\033[m Branch(Chore): $local_branch_name"
     exit 0
 fi
 
